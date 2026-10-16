@@ -428,7 +428,7 @@ function dlgSocio(id) {
     <form id="f" class="fields">
       ${fld('Nombre', `<input name="nombre" required maxlength="80" value="${esc(d.nombre)}">`, 'full')}
       ${fld('Teléfono', `<input name="tel" type="tel" maxlength="30" value="${esc(d.tel)}">`)}
-      ${fld('Email', `<input name="email" type="email" maxlength="80" value="${esc(d.email)}">`)}
+      ${fld('Email', `<input name="email" type="text" inputmode="email" autocomplete="off" maxlength="80" value="${esc(d.email)}">`, '', 'Opcional.')}
       ${fld('Fecha de alta', `<input name="alta" type="date" required value="${esc(d.alta)}">`)}
       ${fld('Cuota (€)', `<input name="cuota" type="number" min="0" step="0.01" required value="${esc(d.cuota)}">`)}
       ${fld('Periodicidad', `<select name="per">${Object.keys(PER).map(k => `<option value="${k}"${k === d.per ? ' selected' : ''}>${k[0].toUpperCase() + k.slice(1)}</option>`).join('')}</select>`)}
